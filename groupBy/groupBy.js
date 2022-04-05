@@ -4,7 +4,7 @@ const areArraysEqual = function (array1, array2) {
   }
 
   for (let index = 0; index < array1.length; index++) {
-    if (array1[index] !== array2[index]) {
+    if (!areEqual(array1[index], array2[index])) {
       return false;
     }
   }
@@ -64,6 +64,13 @@ const groupSameElements = function (set) {
   return subsets;
 };
 
+console.log(groupSameElements([1])); //[[1]]
 console.log(groupSameElements([1, 2, 1])); //[[1,1], 2]
 console.log(groupSameElements([1, 2, 3, 1, 2, 4])); //[[1,1], [2,2], [3], [4]]
 console.log(groupSameElements([[1, 1], 1, [1, 1], 1])); //[ [ [ 1, 1 ], [ 1, 1 ] ], [ 1, 1 ] ]
+console.log(
+  groupSameElements([
+    [[1], [2]],
+    [[1], [2]],
+  ])
+);
