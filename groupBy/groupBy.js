@@ -22,7 +22,7 @@ const getUniqueElements = function (set) {
   return uniqueElements;
 };
 
-const groupElement = function (element, list) {
+const groupElement = function (list, element) {
   const group = [];
 
   for (let position = 0; position < list.length; position++) {
@@ -38,7 +38,7 @@ const groupBy = function (list) {
   const groups = [];
 
   for (let index = 0; index < uniqueElements.length; index++) {
-    groups.push(groupElement(uniqueElements[index], list));
+    groups.push(groupElement(list, uniqueElements[index]));
   }
 
   return groups;
