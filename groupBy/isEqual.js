@@ -1,12 +1,12 @@
-const isEqual = function (argument1, argument2) {
-  const bothAreArrays = Array.isArray(argument1) && Array.isArray(argument2);
+const isEqual = function (lhs, rhs) {
+  const bothAreArrays = Array.isArray(lhs) && Array.isArray(rhs);
 
   if (!bothAreArrays) {
-    return argument1 === argument2;
+    return lhs === rhs;
   }
 
-  const array1 = argument1;
-  const array2 = argument2;
+  const array1 = lhs;
+  const array2 = rhs;
 
   if (array1.length !== array2.length) {
     return false;

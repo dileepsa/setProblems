@@ -22,35 +22,26 @@ const getUniqueElements = function (set) {
   return uniqueElements;
 };
 
-const groupElement = function (element, set) {
-  const subset = [];
+const groupElement = function (element, list) {
+  const group = [];
 
-  for (let position = 0; position < set.length; position++) {
-    if (isEqual(element, set[position])) {
-      subset.push(set[position]);
+  for (let position = 0; position < list.length; position++) {
+    if (isEqual(element, list[position])) {
+      group.push(list[position]);
     }
   }
-  return subset;
+  return group;
 };
 
-const groupSameElements = function (set) {
-  const uniqueElements = getUniqueElements(set);
-  const subsets = [];
+const groupBy = function (list) {
+  const uniqueElements = getUniqueElements(list);
+  const groups = [];
 
   for (let index = 0; index < uniqueElements.length; index++) {
-    subsets.push(groupElement(uniqueElements[index], set));
+    groups.push(groupElement(uniqueElements[index], list));
   }
 
-  return subsets;
+  return groups;
 };
 
-console.log(groupSameElements([1])); //[[1]]
-console.log(groupSameElements([1, 2, 1])); //[[1,1], 2]
-console.log(groupSameElements([1, 2, 3, 1, 2, 4])); //[[1,1], [2,2], [3], [4]]
-console.log(groupSameElements([[1, 1], 1, [1, 1], 1])); //[ [ [ 1, 1 ], [ 1, 1 ] ], [ 1, 1 ] ]
-console.log(
-  groupSameElements([
-    [[1], [2]],
-    [[1], [2]],
-  ])
-);
+exports.groupBy = groupBy;
