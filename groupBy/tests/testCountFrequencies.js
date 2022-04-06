@@ -1,11 +1,11 @@
-const countFrequenciesLib = require('../src/countFrequencies.js');
-const countFrequencies = countFrequenciesLib.countFrequencies;
+const groupFrequenciesLib = require('../src/countFrequencies.js');
+const groupFrequencies = groupFrequenciesLib.groupFrequencies;
 
 const assertLib = require('./assert.js');
 const assert = assertLib.assert;
 
 const testCountFrequencies = function (list, expected, message) {
-  assert(countFrequencies(list), expected, message);
+  assert(groupFrequencies(list), expected, message);
 };
 
 const countFrequenciesTests = function () {
