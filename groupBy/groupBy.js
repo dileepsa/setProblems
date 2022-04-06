@@ -1,23 +1,23 @@
-const areArraysEqual = function (array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
+const areEqual = function (argument1, argument2) {
+  const bothAreArrays = Array.isArray(argument1) && Array.isArray(argument2);
 
-  for (let index = 0; index < array1.length; index++) {
-    if (!areEqual(array1[index], array2[index])) {
+  if (bothAreArrays) {
+    const array1 = argument1;
+    const array2 = argument2;
+
+    if (array1.length !== array2.length) {
       return false;
     }
+
+    for (let index = 0; index < array1.length; index++) {
+      if (!areEqual(array1[index], array2[index])) {
+        return false;
+      }
+    }
+    return true;
   }
 
-  return true;
-};
-
-const areEqual = function (element1, element2) {
-  if (Array.isArray(element1) && Array.isArray(element2)) {
-    return areArraysEqual(element1, element2);
-  }
-
-  return element1 === element2;
+  return argument1 === argument2;
 };
 
 const isPresent = function (subset, set) {
