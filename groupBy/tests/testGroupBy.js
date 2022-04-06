@@ -1,7 +1,7 @@
-const groupByLib = require('./groupBy.js');
+const groupByLib = require('../src/groupBy.js');
 const groupBy = groupByLib.groupBy;
 
-const assertLib = require('./assert.js');
+const assertLib = require('./assert');
 const assert = assertLib.assert;
 
 const testGroupBy = function (list, expected, message) {

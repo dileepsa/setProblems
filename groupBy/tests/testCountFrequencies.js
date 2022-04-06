@@ -1,4 +1,4 @@
-const countFrequenciesLib = require('./countFrequencies.js');
+const countFrequenciesLib = require('../src/countFrequencies.js');
 const countFrequencies = countFrequenciesLib.countFrequencies;
 
 const assertLib = require('./assert.js');
