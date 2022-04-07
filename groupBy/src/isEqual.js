@@ -1,7 +1,10 @@
-const isEqual = function (lhs, rhs) {
-  const bothAreArrays = Array.isArray(lhs) && Array.isArray(rhs);
+const areArrays = function (lhs, rhs) {
+  const isArray = Array.isArray;
+  return isArray(lhs) && isArray(rhs);
+};
 
-  if (!bothAreArrays) {
+const isEqual = function (lhs, rhs) {
+  if (!areArrays(lhs, rhs)) {
     return lhs === rhs;
   }
 
